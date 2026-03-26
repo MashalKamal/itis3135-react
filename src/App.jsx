@@ -1,30 +1,24 @@
-
-import './App.css'
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import SharedLayout from './layouts/SharedLayout';
+import Home from './pages/Home';
+import Contract from './pages/Contract'; // create this file if you add it
+import FccCert from './pages/FccCert';   // create if needed
+import './App.css';
 
 function App() {
-
-
   return (
-    <>
-      <header>
-        <h1> Mashal Gharzai's React</h1>
-      </header>
-      <main>
-        <h2>
-          Homepage
-        </h2>
-
-        <p>
-          This is my react page 
-        </p>
-      </main>
-      <footer>
-        <p>
-          Design By Mashal Gharzai 
-        </p>
-      </footer>
-    </>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<SharedLayout />}>
+          <Route index element={<Home />} />
+          <Route path="contract" element={<Contract />} />
+          <Route path="fcc-cert" element={<FccCert />} />
+          {/* add more routes as you create pages */}
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
