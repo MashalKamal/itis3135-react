@@ -1,0 +1,77 @@
+:root {
+  --bg: #fff;
+  --text: #222;
+  --muted: #666;
+  --accent: #2b7cff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.container {
+  max-width: 800px;
+  margin: 24px auto;
+  padding: 16px;
+}
+
+/* Accordion */
+.accordion-item {
+  border-bottom: 1px solid #eee;
+}
+
+.accordion-title {
+  width: 100%;
+  padding: 12px 0;
+  font-size: 16px;
+  font-weight: 500;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  color: var(--text);
+}
+
+.accordion-title.open {
+  color: var(--accent);
+}
+
+.accordion-content {
+  padding: 8px 0 16px 0;
+  font-size: 14px;
+  color: var(--muted);
+  display: none;
+}
+
+.accordion-content.open {
+  display: block;
+}
+
+.accordion-content a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.accordion-content a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .container {
+    padding: 12px;
+  }
+  .accordion-title {
+    font-size: 15px;
+  }
+  .accordion-content {
+    font-size: 14px;
+  }
+}

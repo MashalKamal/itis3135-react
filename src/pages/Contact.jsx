@@ -6,10 +6,11 @@ export default function Contact() {
   }, []);
 
   return (
-    <section>
-      <h1>Contract</h1>
-      {/* Paste the HTML contact of the original Contract page here.
-          Convert HTML -> JSX: class -> className, for -> htmlFor, self-close <img /> */}
-    </section>
+    <main>
+      <h1>Contact</h1>
+      <p>Email: mashalkaml.12@gmail.com</p>
+      <p>Phone: 323-988-13223</p>
+      <p>Address: 23 Old House</p>
+    </main>
   );
 }

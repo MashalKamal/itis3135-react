@@ -1,15 +1,15 @@
-import React, { useEffect } from 'react';
+import React, { useEffect } from "react";
+import "./Home.css";
 
 export default function Home() {
   useEffect(() => {
-    document.title = 'Home - ITIS3135';
+    document.title = "Home - ITIS3135";
   }, []);
 
   return (
-    <section>
-      <h1>Mashal Gharzai's React</h1>
-      <h2>Homepage</h2>
-      <p>This is my react page</p>
-    </section>
+    <div className="home-page">
+      <h1>Welcome to ITIS3135 - React</h1>
+      <h2>My React Website</h2>
+    </div>
   );
 }

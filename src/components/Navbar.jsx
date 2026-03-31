@@ -1,22 +1,26 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import './Navbar.css'; // optional: create this if you want component-specific styles
+import './Navbar.css';
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
-  return (
-    <header className="ITIS3135 Webpage">
-      <nav className="Welcom">
-        <button className="Afghan Brand" onClick={() => setOpen(o => !o)}>
-          Menu
-        </button>
+  const closeMenu = () => setOpen(false);
 
-        <ul className={`primary-menu ${open ? 'open' : ''}`}>
-          <li><NavLink to="/" end>Home</NavLink></li>
-          <li><NavLink to="/contract">Contract</NavLink></li>
-          <li><NavLink to="/fcc-cert">FCC Cert</NavLink></li>
-          {/* add other links exactly like your original site */}
+  return (
+    <header className="navbar">
+      <nav className="navbar-container">
+        <button className="menu-btn" onClick={() => setOpen(!open)}>Menu</button>
+
+        <ul className={`nav-links ${open ? 'open' : ''}`}>
+          <li><NavLink to="/" end onClick={closeMenu}>Home</NavLink></li>
+          <li><NavLink to="/contract" onClick={closeMenu}>Contract</NavLink></li>
+          <li><NavLink to="/fcc-cert" onClick={closeMenu}>FCC Cert</NavLink></li>
+          <li><NavLink to="/survey" onClick={closeMenu}>Survey</NavLink></li>
+          <li><NavLink to="/inventory" onClick={closeMenu}>Inventory</NavLink></li>
+          <li><NavLink to="/intro-form" onClick={closeMenu}>Intro Form</NavLink></li>
+          <li><NavLink to="/instructions" onClick={closeMenu}>Instructions</NavLink></li>
+          <li><NavLink to="/website-evaluation" onClick={closeMenu}>Evaluations</NavLink></li>
         </ul>
       </nav>
     </header>

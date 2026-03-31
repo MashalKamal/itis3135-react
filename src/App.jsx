@@ -1,23 +1,37 @@
-import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import SharedLayout from './layouts/SharedLayout';
-import Home from './pages/Home';
-import Contract from './pages/Contract'; // create this file if you add it
-import FccCert from './pages/FccCert';   // create if needed
-import './App.css';
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import SharedLayout from "./layouts/SharedLayout";
+
+// Pages
+import Home from "./pages/Home";
+import Contract from "./pages/Contract";
+import FccCert from "./pages/FccCert";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import Survey from "./pages/Survey";
+import Inventory from "./pages/Inventory";
+import Instructions from "./pages/Instructions";
+import IntroForm from "./pages/IntroForm";
+import WebsiteEvaluation from "./pages/WebsiteEvaluation";
+
+// Styles
+import "./App.css";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<SharedLayout />}>
-          <Route index element={<Home />} />
-          <Route path="contract" element={<Contract />} />
-          <Route path="fcc-cert" element={<FccCert />} />
-          {/* add more routes as you create pages */}
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <Routes>
+  <Route path="/" element={<SharedLayout />}>
+    <Route index element={<Home />} />
+    <Route path="contact" element={<Contact />} />
+    <Route path="contract" element={<Contract />} />
+    <Route path="fcc-cert" element={<FccCert />} />
+    <Route path="survey" element={<Survey />} />
+    <Route path="inventory" element={<Inventory />} />
+    <Route path="intro-form" element={<IntroForm />} />
+    <Route path="instructions" element={<Instructions />} />
+    <Route path="website-evaluation" element={<WebsiteEvaluation />} />
+  </Route>
+</Routes>
   );
 }
 

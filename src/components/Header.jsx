@@ -1,16 +1,11 @@
-import { Link } from 'react-router';
+import React from "react";
+import "./Header.css";
+
 export default function Header() {
-    return (
-        <header>
-            <h1>Alexander Prechtel's Advanced Pegasus | ITIS 3135</h1>
-            <nav>
-                <ul>
-                    <li>
-                        Home 
-                        {/* Do not add links yet. */}
-                    </li>
-                </ul>
-            </nav>
-        </header>
-    );
+  return (
+    <header className="header">
+      <h1>Welcome to ITIS3135 - React</h1>
+      <p>My React Website</p>
+    </header>
+  );
 }

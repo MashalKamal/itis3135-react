@@ -1,15 +1,28 @@
-import React, { useEffect } from 'react';
-
 export default function FccCert() {
-  useEffect(() => {
-    document.title = 'FccCert - ITIS3135';
-  }, []);
-
   return (
-    <section>
-      <h1>Contract</h1>
-      {/* Paste the HTML FccCert of the original Contract page here.
-          Convert HTML -> JSX: class -> className, for -> htmlFor, self-close <img /> */}
-    </section>
+    <>
+      <h1>FCC Certification</h1>
+
+      <p>
+        I have successfully completed the{" "}
+        <strong>Responsive Web Design Certification</strong> from freeCodeCamp.
+      </p>
+
+      <p>
+        This certification demonstrates my knowledge of HTML, CSS, and building
+        responsive web pages.
+      </p>
+
+      <p>
+        👉 View my certificate here:{" "}
+        <a
+          href="https://www.freecodecamp.org/certification/mgharzai0/responsive-web-design-"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          freeCodeCamp Certificate
+        </a>
+      </p>
+    </>
   );
 }
