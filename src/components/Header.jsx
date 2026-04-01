@@ -5,7 +5,7 @@ export default function Header() {
   return (
     <header className="header">
       <h1>Welcome to ITIS3135 - React</h1>
-      <p>My React Website</p>
+      <p>My React Page </p>
     </header>
   );
 }
