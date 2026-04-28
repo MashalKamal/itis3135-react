@@ -1,0 +1,73 @@
+.page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Main box styling (matches your theme) */
+.page-box {
+  background-color: rgb(222, 195, 167);
+  color: rgb(21, 109, 53);
+}
+
+/* Header styling */
+.page header {
+  text-align: center;
+  background: rgb(179, 106, 54);
+  color: rgb(228, 235, 231);
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+/* Figure styling */
+.page figure {
+  text-align: center;
+  margin: 20px auto;
+}
+
+/* 🔥 FIXED IMAGE SIZE (this is your main issue) */
+.page figure img {
+  width: 250px;       /* controls big cookie image */
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Caption */
+.page figcaption {
+  font-size: 14px;
+  margin-top: 5px;
+  color: rgb(60, 60, 60);
+}
+
+/* Lists spacing */
+.page ul {
+  padding-left: 20px;
+  margin-top: 15px;
+}
+
+.page ol {
+  padding-left: 20px;
+}
+
+/* Blockquote styling */
+.page blockquote {
+  margin-top: 20px;
+  padding: 10px;
+  border-left: 4px solid rgb(179, 106, 54);
+  font-style: italic;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Back link */
+.page ul li a {
+  color: green;
+  text-decoration: none;
+}
+
+.page ul li a:hover {
+  text-decoration: underline;
+}

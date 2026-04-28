@@ -1,0 +1,102 @@
+/* PAGE BACKGROUND (same brown theme) */
+.intro-page {
+  font-family: Arial, sans-serif;
+  background: rgb(179, 106, 54);
+  padding: 20px;
+  min-height: 100vh;
+}
+
+/* TITLE */
+.intro-page h2 {
+  text-align: center;
+  color: white;
+  margin-bottom: 20px;
+}
+
+/* FORM CONTAINER */
+.intro-page form {
+  max-width: 900px;
+  margin: auto;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* FIELDSETS */
+fieldset {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* LEGEND */
+legend {
+  font-weight: bold;
+}
+
+/* ROW STYLE (IMPORTANT — matches your old layout) */
+.form-row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* LABEL LEFT SIDE */
+.form-row label {
+  width: 220px;
+  font-weight: bold;
+  text-align: right;
+}
+
+/* INPUT RIGHT SIDE */
+.form-row input,
+.form-row textarea {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+/* TEXTAREA SIZE */
+textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+/* BUTTONS */
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+/* BUTTON STYLE */
+button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  background: #2c3e50;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #1a252f;
+}
+
+/* OUTPUT BOX */
+pre {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  overflow-x: auto;
+}

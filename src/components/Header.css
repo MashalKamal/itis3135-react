@@ -1,17 +1,25 @@
+/* ==========================
+   HEADER (MATCH HTML THEME)
+========================== */
+
 .header {
-  background-color: #222;
-  color: white;
-  text-align: center;
-  padding: 20px;
+    background: rgb(179, 106, 54);
+    color: rgb(228, 235, 231);
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
 }
 
+/* MAIN TITLE */
 .header h1 {
-  margin: 0;
-  font-size: 2rem;
+    margin: 0;
+    font-size: 2rem;
 }
 
+/* SUBTEXT */
 .header p {
-  margin-top: 5px;
-  font-size: 1rem;
-  color: #ccc;
+    margin-top: 5px;
+    font-size: 1rem;
+    color: rgb(228, 235, 231);
 }

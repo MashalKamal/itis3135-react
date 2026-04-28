@@ -1,0 +1,58 @@
+/* Page container */
+#main-doc {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  color: rgb(21, 109, 53);
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+/* Each section box */
+.main-section {
+  background: #fff0f5;
+  padding: 20px;
+  margin-bottom: 25px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Section titles */
+.main-section h2 {
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+}
+
+/* Code blocks */
+.main-section code {
+  display: block;
+  background: #2d2d2d;
+  color: #f5f5f5;
+  padding: 10px;
+  border-radius: 6px;
+  margin: 10px 0;
+  font-family: monospace;
+}
+
+/* Lists */
+.main-section ul,
+.main-section ol {
+  padding-left: 20px;
+  margin: 10px 0;
+}
+
+/* Back link styling */
+.main-section a {
+  color: green;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.main-section a:hover {
+  text-decoration: underline;
+}
+
+/* Make <br> spacing nicer (optional cleanup effect) */
+.main-section br {
+  line-height: 10px;
+}

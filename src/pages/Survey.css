@@ -1,0 +1,76 @@
+/* ==========================
+   SURVEY PAGE WRAPPER
+========================== */
+.survey-page {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background: rgb(222, 195, 167);
+}
+
+/* TITLE */
+.survey-page h2 {
+    text-align: center;
+    color: white;
+    margin-bottom: 15px;
+}
+
+/* FORM BOX */
+.survey-form {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* LABELS */
+.survey-form label {
+    font-weight: bold;
+}
+
+/* SELECT, INPUT, TEXTAREA */
+.survey-form select,
+.survey-form input,
+.survey-form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+/* RADIO GROUP */
+.radio-group {
+    margin: 10px 0 15px 0;
+}
+
+/* BUTTON */
+.survey-form button {
+    background: #2c3e50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.survey-form button:hover {
+    background: #1a252f;
+}
+
+/* BACK LINK */
+.back-home {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.back-home a {
+    color: rgb(21, 109, 53);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.back-home a:hover {
+    text-decoration: underline;
+}

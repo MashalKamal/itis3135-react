@@ -1,111 +1,156 @@
 import React, { useState } from "react";
+import "./IntroForm.css";
 
 export default function IntroForm() {
-  const [formData, setFormData] = useState({
+  const [form, setForm] = useState({
     firstName: "Mashal",
+    middle: "",
     lastName: "Gharzai",
-    mascotAdj: "Curious",
-    mascotAnimal: "Falcon",
-    divider: "~",
-    imageFile: null,
-    imageCaption: "Studying on computer",
-    personalStatement: "I am from Afghanistan and studying IT.",
-    bullets: [
-      "Personal Background: From Afghanistan.",
-      "Academic Background: IT degree.",
-      "Transferred to UNCC.",
-      "Subject Background: IT.",
-      "Primary Computer: Laptop.",
-      "Hobbies: Reading.",
-      "Goals: Graduate.",
-    ],
-    courses: [],
-    quote: "Learning never stops.",
-    quoteAuthor: "Mashal",
+    preferred: "",
+    divider: "|",
+    mascotAdj: "Mango",
+    mascotAnimal: "Gorilla",
+    quote: "Every sunrise is a reminder that you have another chance to be better",
+    quoteAuthor: "",
+    imageCaption: "My cookies at Christmas",
+    personalStatement:
+      "I’m currently studying Computer Science at UNC Charlotte, focusing on Software Engineering and Web/Mobile App Development."
   });
 
-  const [imagePreview, setImagePreview] = useState(
-    "https://img.freepik.com/premium-vector/cute-girl-study-with-computer-vector-illustration-white_835895-6032.jpg"
-  );
+  const [output, setOutput] = useState("");
+  const [showForm, setShowForm] = useState(true);
 
   const handleChange = (e) => {
-    const { id, value, files } = e.target;
-    if (id === "imageFile" && files.length > 0) {
-      setFormData({ ...formData, imageFile: files[0] });
-      setImagePreview(URL.createObjectURL(files[0]));
-    } else if (id.startsWith("bullet")) {
-      const index = parseInt(id.replace("bullet", ""), 10) - 1;
-      const newBullets = [...formData.bullets];
-      newBullets[index] = value;
-      setFormData({ ...formData, bullets: newBullets });
-    } else {
-      setFormData({ ...formData, [id]: value });
-    }
+    setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Form submitted:", formData);
+  const generateHTML = () => {
+    const html = `
+<h2>Introduction HTML</h2>
+
+<h3>${form.firstName} ${form.middle} ${form.lastName} ${form.divider} ${form.mascotAdj} ${form.mascotAnimal}</h3>
+
+<section>
+  <h3>Personal Statement</h3>
+  <p>${form.personalStatement}</p>
+</section>
+
+<section>
+  <h3>Quote</h3>
+  <p>"${form.quote}" - ${form.quoteAuthor}</p>
+</section>
+`;
+    setOutput(html);
+    setShowForm(false);
   };
+
+  const generateJSON = () => {
+    const json = {
+      first_name: form.firstName,
+      middle_name: form.middle,
+      last_name: form.lastName,
+      preferred_name: form.preferred,
+      mascot_adjective: form.mascotAdj,
+      mascot_animal: form.mascotAnimal,
+      divider: form.divider,
+      image_caption: form.imageCaption,
+      personal_statement: form.personalStatement,
+      quote: form.quote,
+      quote_author: form.quoteAuthor
+    };
+
+    setOutput(JSON.stringify(json, null, 2));
+    setShowForm(false);
+  };
+
+  const resetForm = () => {
+    setForm({
+      firstName: "",
+      middle: "",
+      lastName: "",
+      preferred: "",
+      divider: "|",
+      mascotAdj: "",
+      mascotAnimal: "",
+      quote: "",
+      quoteAuthor: "",
+      imageCaption: "",
+      personalStatement: ""
+    });
+
+    setOutput("");
+    setShowForm(true);
+  };
+
+  if (!showForm) {
+    return (
+      <div className="intro-page">
+        <h2>Output</h2>
+        <pre>{output}</pre>
+        <button onClick={() => setShowForm(true)}>Back to Form</button>
+      </div>
+    );
+  }
 
   return (
-    <main>
-      <h2>Introduction Form</h2>
-      <h3>Please submit the form below.</h3>
+    <main className="intro-page">
 
-      <form onSubmit={handleSubmit}>
+      <h2>Introduction Form</h2>
+
+      {/* BASIC INFO */}
+      <fieldset>
+        <legend>Basic Information</legend>
+
         <label>First Name</label>
-        <input id="firstName" value={formData.firstName} onChange={handleChange} required />
+        <input name="firstName" value={form.firstName} onChange={handleChange} />
+
+        <label>Middle Initial</label>
+        <input name="middle" value={form.middle} onChange={handleChange} />
 
         <label>Last Name</label>
-        <input id="lastName" value={formData.lastName} onChange={handleChange} required />
+        <input name="lastName" value={form.lastName} onChange={handleChange} />
 
-        <label>Mascot Adjective</label>
-        <input id="mascotAdj" value={formData.mascotAdj} onChange={handleChange} required />
-
-        <label>Mascot Animal</label>
-        <input id="mascotAnimal" value={formData.mascotAnimal} onChange={handleChange} required />
+        <label>Preferred Name</label>
+        <input name="preferred" value={form.preferred} onChange={handleChange} />
 
         <label>Divider</label>
-        <input id="divider" value={formData.divider} onChange={handleChange} required />
+        <input name="divider" value={form.divider} onChange={handleChange} />
 
-        <label>Image</label>
-        <input type="file" id="imageFile" onChange={handleChange} />
+        <label>Mascot Adjective</label>
+        <input name="mascotAdj" value={form.mascotAdj} onChange={handleChange} />
 
-        <img src={imagePreview} width="200" alt="Current" />
+        <label>Mascot Animal</label>
+        <input name="mascotAnimal" value={form.mascotAnimal} onChange={handleChange} />
+      </fieldset>
 
-        <label>Caption</label>
-        <input id="imageCaption" value={formData.imageCaption} onChange={handleChange} />
-
-        <label>Personal Statement</label>
+      {/* STATEMENT */}
+      <fieldset>
+        <legend>Personal Statement</legend>
         <textarea
-          id="personalStatement"
-          value={formData.personalStatement}
+          name="personalStatement"
+          value={form.personalStatement}
           onChange={handleChange}
         />
+      </fieldset>
 
-        <h3>Bullets</h3>
-        {formData.bullets.map((bullet, i) => (
-          <input
-            key={i}
-            id={`bullet${i + 1}`}
-            value={bullet}
-            onChange={handleChange}
-          />
-        ))}
+      {/* QUOTE */}
+      <fieldset>
+        <legend>Quote</legend>
 
         <label>Quote</label>
-        <input id="quote" value={formData.quote} onChange={handleChange} />
+        <input name="quote" value={form.quote} onChange={handleChange} />
 
         <label>Author</label>
-        <input id="quoteAuthor" value={formData.quoteAuthor} onChange={handleChange} />
+        <input name="quoteAuthor" value={form.quoteAuthor} onChange={handleChange} />
+      </fieldset>
 
-        <br /><br />
-        <button type="submit">Submit</button>
-        <button type="reset" onClick={() => window.location.reload()}>
-          Reset
-        </button>
-      </form>
+      {/* BUTTONS */}
+      <div className="button-group">
+        <button onClick={generateHTML}>Generate HTML</button>
+        <button onClick={generateJSON}>Generate JSON</button>
+        <button onClick={resetForm}>Reset</button>
+      </div>
+
     </main>
   );
 }

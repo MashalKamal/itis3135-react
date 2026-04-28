@@ -1,28 +1,29 @@
-import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
-import './Navbar.css';
+import React from "react";
+import { Link } from "react-router-dom";
+import "./Navbar.css";
 
 export default function Navbar() {
-  const [open, setOpen] = useState(false);
-
-  const closeMenu = () => setOpen(false);
-
   return (
     <header className="navbar">
-      <nav className="navbar-container">
-        <button className="menu-btn" onClick={() => setOpen(!open)}>Menu</button>
 
-        <ul className={`nav-links ${open ? 'open' : ''}`}>
-          <li><NavLink to="/" end onClick={closeMenu}>Home</NavLink></li>
-          <li><NavLink to="/contract" onClick={closeMenu}>Contract</NavLink></li>
-          <li><NavLink to="/fcc-cert" onClick={closeMenu}>FCC Cert</NavLink></li>
-          <li><NavLink to="/survey" onClick={closeMenu}>Survey</NavLink></li>
-          <li><NavLink to="/inventory" onClick={closeMenu}>Inventory</NavLink></li>
-          <li><NavLink to="/intro-form" onClick={closeMenu}>Intro Form</NavLink></li>
-          <li><NavLink to="/instructions" onClick={closeMenu}>Instructions</NavLink></li>
-          <li><NavLink to="/website-evaluation" onClick={closeMenu}>Evaluations</NavLink></li>
+      <nav className="navbar-container">
+        <ul className="nav-links">
+
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/contract">Contract</Link></li>
+          <li><Link to="/survey">Survey</Link></li>
+          <li><Link to="/instructions">Instructions</Link></li>
+          <li><Link to="/intro-form">Intro Form</Link></li>
+          <li><Link to="/inventory">Inventory</Link></li>
+          <li><Link to="/about">About</Link></li>
+          <li><Link to="/contact">Contact</Link></li>
+          <li><Link to="/website-evaluation">Website Evaluations</Link></li>
+          {/* CLIENT PROJECT */}
+        <li><Link to="/client-project">Client Project</Link></li>
+
         </ul>
       </nav>
+
     </header>
   );
 }

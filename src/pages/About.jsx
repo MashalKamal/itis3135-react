@@ -1,15 +1,90 @@
-import React, { useEffect } from 'react';
+import React from "react";
+import "./About.css";
 
 export default function About() {
-  useEffect(() => {
-    document.title = 'About - ITIS3135';
-  }, []);
-
   return (
-    <section>
-      <h1>About</h1>
-      {/* Paste the HTML introduction of the original Contract page here.
-          Convert HTML -> JSX: class -> className, for -> htmlFor, self-close <img /> */}
-    </section>
+    <main className="page page-box">
+
+      {/* Go Back Home */}
+      <ul>
+        <li>
+          <a href="/">Go Back Home</a>
+        </li>
+      </ul>
+
+      <header>
+        <h1>Mashal Gharzai</h1>
+
+        <h2>
+          <em>
+            I understand that what I put here is publicly available on the web
+            and I won’t put anything here I don’t want the public to see - KO - 1/17/2026
+          </em>
+        </h2>
+      </header>
+
+      <h3>Mashal Gharzai | Mango-Gorilla</h3>
+
+      <figure>
+        <img
+          src="https://media.npr.org/assets/img/2014/09/17/cookies_wide-48e0dca1f32bddd02ae698a8298e47ada9dc6768.jpg"
+          alt="Cookies at Christmas"
+        />
+        <figcaption>My cookies at Christmas</figcaption>
+      </figure>
+
+      <p>
+        I’m currently studying Computer Science at UNC Charlotte, focusing on
+        Software Engineering and Web/Mobile App Development.
+      </p>
+
+      <ul>
+        <li>
+          <strong>Personal Background:</strong> I'm 20 years old, and when I'm not studying, you can usually find me at home enjoying the meals I make.
+        </li>
+
+        <li>
+          <strong>Professional Background:</strong> I’m interning in the IT department at CPCC.
+        </li>
+
+        <li>
+          <strong>Academic Background:</strong> I graduated from CPCC and I’m now a junior.
+        </li>
+
+        <li>
+          <strong>Background in Subject:</strong> This is my first web development class.
+        </li>
+
+        <li>
+          <strong>Primary Work Computer:</strong> 2023 HP.
+        </li>
+
+        <li>
+          <strong>Backup Plan:</strong> I back up my data every month.
+        </li>
+
+        <li>
+          <strong>Current Courses:</strong>
+          <ol>
+            <li>ITIS3135 - Front-End Web Application Development</li>
+            <li>ITSC3160 - Database Design & Implementation</li>
+            <li>STAT2122 - Introduction to Probability and Statistics</li>
+          </ol>
+        </li>
+
+        <li>
+          <strong>Fun Fact:</strong> I’m scared of cats.
+        </li>
+
+        <li>
+          <strong>Extra:</strong> I moved to the USA in 2023.
+        </li>
+      </ul>
+
+      <blockquote>
+        “Every sunrise is a reminder that you have another chance to be better”
+      </blockquote>
+
+    </main>
   );
 }

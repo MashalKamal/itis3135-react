@@ -1,43 +1,58 @@
+/* ==========================
+   NAVBAR (MATCH HTML VERSION)
+========================== */
+
 .navbar {
-  background-color: #333;
-  padding: 10px;
+    background: rgb(179, 106, 54);
+    padding: 15px;
+    text-align: center;
+    border-radius: 10px;
 }
 
+/* NAV CONTAINER */
 .navbar-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    display: flex;
+    justify-content: center;
 }
 
-.menu-btn {
-  background: #555;
-  color: white;
-  border: none;
-  padding: 8px 12px;
-  cursor: pointer;
-  margin-bottom: 10px;
-}
-
+/* NAV LIST */
 .nav-links {
-  list-style: none;
-  padding: 0;
-  display: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
-.nav-links.open {
-  display: block;
-}
-
+/* INLINE ITEMS (like your HTML) */
 .nav-links li {
-  margin: 5px 0;
+    display: inline;
 }
 
+/* SEPARATOR STYLE */
+.nav-links li::after {
+    content: "|";
+    margin: 0 8px;
+    color: rgb(242, 247, 245);
+}
+
+/* REMOVE LAST SEPARATOR */
+.nav-links li:last-child::after {
+    content: "";
+}
+
+/* LINKS */
 .nav-links a {
-  color: white;
-  text-decoration: none;
+    color: rgb(242, 247, 245);
+    text-decoration: none;
+    font-weight: bold;
 }
 
+/* HOVER EFFECT (same as HTML) */
+.nav-links a:hover {
+    color: rgb(9, 96, 9);
+    text-decoration: underline;
+}
+
+/* ACTIVE LINK */
 .nav-links a.active {
-  font-weight: bold;
-  text-decoration: underline;
+    text-decoration: underline;
 }

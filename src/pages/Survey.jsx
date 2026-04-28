@@ -1,48 +1,113 @@
-import React from 'react';
+import React, { useState } from "react";
+import "./Survey.css";
 
 export default function Survey() {
+  const [form, setForm] = useState({
+    feature: "strength",
+    rating: "",
+    suggestions: ""
+  });
+
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    alert("Survey submitted! Thank you 👍");
+  };
+
   return (
-    <main>
-      <h2>Welcome to the Mango Gorilla Survey!</h2>
-      <p>We’d love your feedback about Mango Gorilla, our mascot for your project!</p>
+    <main className="survey-page">
 
-      {/* Survey Section */}
-      <section id="mango-gorilla-survey">
-        <h3>Mango Gorilla Survey</h3>
-        <form action="#" method="post">
-          {/* Favorite Feature */}
-          <label htmlFor="favorite-feature">What is your favorite feature of Mango Gorilla?</label><br />
-          <select id="favorite-feature" name="favorite-feature">
-            <option value="strength">Strength</option>
-            <option value="playfulness">Playfulness</option>
-            <option value="color">Color</option>
-            <option value="intelligence">Intelligence</option>
-          </select><br /><br />
+      <h2>Mango Gorilla Survey</h2>
 
-          {/* Rating */}
-          <label>How would you rate Mango Gorilla?</label><br />
-          <input type="radio" id="excellent" name="rating" value="excellent" />
-          <label htmlFor="excellent">Excellent</label><br />
-          <input type="radio" id="good" name="rating" value="good" />
-          <label htmlFor="good">Good</label><br />
-          <input type="radio" id="average" name="rating" value="average" />
-          <label htmlFor="average">Average</label><br />
-          <input type="radio" id="poor" name="rating" value="poor" />
-          <label htmlFor="poor">Poor</label><br /><br />
+      <p>
+        We’d love your feedback about Mango Gorilla, our mascot for your project!
+      </p>
 
-          {/* Suggestions */}
-          <label htmlFor="suggestions">Any suggestions for Mango Gorilla?</label><br />
-          <textarea
-            id="suggestions"
-            name="suggestions"
-            rows="4"
-            cols="50"
-            placeholder="Your feedback..."
-          ></textarea><br /><br />
+      <h3>Mango Gorilla Survey</h3>
 
-          <button type="submit">Submit</button>
-        </form>
-      </section>
+      {/* Go Back Home */}
+      <div className="back-home">
+        <a href="/">Go Back Home</a>
+      </div>
+
+      <form className="survey-form" onSubmit={handleSubmit}>
+
+        {/* Favorite Feature */}
+        <label>What is your favorite feature of Mango Gorilla?</label>
+
+        <select
+          name="feature"
+          value={form.feature}
+          onChange={handleChange}
+        >
+          <option value="strength">Strength</option>
+          <option value="playfulness">Playfulness</option>
+          <option value="color">Color</option>
+          <option value="intelligence">Intelligence</option>
+        </select>
+
+        {/* Rating */}
+        <label>How would you rate Mango Gorilla?</label>
+
+        <div className="radio-group">
+          <label>
+            <input
+              type="radio"
+              name="rating"
+              value="excellent"
+              onChange={handleChange}
+            />
+            Excellent
+          </label>
+
+          <label>
+            <input
+              type="radio"
+              name="rating"
+              value="good"
+              onChange={handleChange}
+            />
+            Good
+          </label>
+
+          <label>
+            <input
+              type="radio"
+              name="rating"
+              value="average"
+              onChange={handleChange}
+            />
+            Average
+          </label>
+
+          <label>
+            <input
+              type="radio"
+              name="rating"
+              value="poor"
+              onChange={handleChange}
+            />
+            Poor
+          </label>
+        </div>
+
+        {/* Suggestions */}
+        <label>Any suggestions for Mango Gorilla?</label>
+
+        <textarea
+          name="suggestions"
+          rows="4"
+          value={form.suggestions}
+          onChange={handleChange}
+          placeholder="Your feedback..."
+        />
+
+        <button type="submit">Submit</button>
+
+      </form>
     </main>
   );
 }
