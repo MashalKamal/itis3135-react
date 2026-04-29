@@ -1,39 +1,64 @@
-import React from 'react';
-import './Footer.css';
+import React from "react";
+import "./Footer.css";
 
 export default function Footer() {
   return (
-    <footer className="site-footer">
-      <div className="footer-inner">
-        <p className="footer-text">Design by Mashal Gharzai</p>
+    <footer className="footer">
+      <hr />
 
-        <p className="footer-text">
-          &copy; {new Date().getFullYear()} ITIS3135.io{' '}
+      <p>Connect with Afghan Brands:</p>
+
+      <ul className="footer-links">
+        <li>
+          <a href="mailto:mashalgharzai0@gmail.com">Email</a>
+        </li>
+
+        <li>
+          <a href="tel:9802920909">Phone: 980-292-0909</a>
+        </li>
+
+        <li>
           <a
-            href="https://PLACEHOLDER.vercel.app"
+            href="https://mashalkamal.github.io/"
             target="_blank"
             rel="noopener noreferrer"
           >
-            ITIS3135@Vercel
+            My GitHub Page
           </a>
-        </p>
+        </li>
 
-        <hr className="footer-divider" />
-
-        <p className="footer-links">
-          <a href="https://mashalkamal.github.io/" target="_blank" rel="noopener noreferrer">
-            GitHub
-          </a>
-          {' | '}
-          <a href="https://webpages.charlotte.edu/mgharzai/" target="_blank" rel="noopener noreferrer">
-            School
-          </a>
-          {' | '}
-          <a href="https://www.linkedin.com/in/mashal-gharzai/" target="_blank" rel="noopener noreferrer">
+        <li>
+          <a
+            href="https://www.linkedin.com/in/mashal-gharzai/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             LinkedIn
           </a>
-        </p>
-      </div>
+        </li>
+
+        <li>
+          <a
+            href="https://www.freecodecamp.org"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            FreeCodeCamp
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="https://itis3135-react-site.vercel.app"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            ITIS3135 React Site
+          </a>
+        </li>
+      </ul>
+
+      <p>Designed by Mashal Gharzai - Afghan Brands</p>
     </footer>
   );
 }

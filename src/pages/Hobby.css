@@ -1,0 +1,138 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: #2d2d2d;
+  background: url("/images/food-background.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+.hobby-page {
+  min-height: 100vh;
+}
+
+/* Header */
+header {
+  background: linear-gradient(135deg, #5eab9b, #3f7f72);
+  color: white;
+  text-align: center;
+  padding: 25px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+  margin-bottom: 10px;
+  font-size: 2.5em;
+}
+
+header p {
+  font-size: 1.1em;
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background: rgba(255, 255, 255, 0.95);
+  border-bottom: 2px solid #ddd;
+  padding: 12px;
+}
+
+nav button {
+  margin: 8px 10px;
+  background: transparent;
+  border: none;
+  color: #3f7f72;
+  font-weight: bold;
+  font-size: 1em;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+nav button:hover {
+  background: #5eab9b;
+  color: white;
+}
+
+/* Main Content */
+main {
+  padding-bottom: 30px;
+}
+
+section {
+  max-width: 950px;
+  margin: 30px auto;
+  background: rgba(255, 255, 255, 0.94);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+h2 {
+  border-left: 6px solid #5eab9b;
+  padding-left: 12px;
+  color: #3f7f72;
+  margin-bottom: 20px;
+}
+
+p {
+  line-height: 1.8;
+  margin-bottom: 18px;
+  font-size: 1.05em;
+}
+
+/* Images */
+figure {
+  text-align: center;
+  margin: 25px 0;
+}
+
+img {
+  width: 100%;
+  max-width: 340px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+figcaption {
+  font-size: 0.95em;
+  color: #555;
+  margin-top: 8px;
+  font-weight: bold;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  background: #3f7f72;
+  color: white;
+  padding: 25px;
+  margin-top: 30px;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2em;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav button {
+    width: 80%;
+  }
+
+  section {
+    margin: 15px;
+    padding: 20px;
+  }
+}

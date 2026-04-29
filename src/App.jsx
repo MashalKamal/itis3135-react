@@ -1,9 +1,8 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-
-// Layout
 import SharedLayout from "./layouts/SharedLayout";
 
+// Pages
 // Pages
 import Home from "./pages/Home";
 import Contract from "./pages/Contract";
@@ -15,7 +14,8 @@ import Inventory from "./pages/Inventory";
 import Instructions from "./pages/Instructions";
 import IntroForm from "./pages/IntroForm";
 import WebsiteEvaluation from "./pages/WebsiteEvaluation";
-
+import Hobby from "./pages/Hobby"; // ✅ ADD THIS
+import Slideshow from "./pages/Slideshow";
 function App() {
   return (
     <Routes>
@@ -30,6 +30,11 @@ function App() {
         <Route path="instructions" element={<Instructions />} />
         <Route path="intro-form" element={<IntroForm />} />
         <Route path="website-evaluation" element={<WebsiteEvaluation />} />
+      
+
+        {/* ✅ HOBBY PROJECT ROUTE */}
+        <Route path="slideshow" element={<Slideshow />} />
+        <Route path="hobby" element={<Hobby />} />
       </Route>
     </Routes>
   );

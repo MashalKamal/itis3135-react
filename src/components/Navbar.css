@@ -1,37 +1,26 @@
-/* ==========================
-   NAVBAR (MATCH HTML VERSION)
-========================== */
-
 .navbar {
     background: rgb(179, 106, 54);
     padding: 15px;
     text-align: center;
-    border-radius: 10px;
 }
 
-/* NAV CONTAINER */
-.navbar-container {
-    display: flex;
-    justify-content: center;
-}
-
-/* NAV LIST */
+/* NAV LIST RESET */
 .nav-links {
     list-style: none;
-    padding: 0;
     margin: 0;
+    padding: 0;
 }
 
-/* INLINE ITEMS (like your HTML) */
+/* INLINE ITEMS */
 .nav-links li {
     display: inline;
 }
 
-/* SEPARATOR STYLE */
+/* SEPARATOR */
 .nav-links li::after {
     content: "|";
-    margin: 0 8px;
-    color: rgb(242, 247, 245);
+    margin: 0 10px;
+    color: black;
 }
 
 /* REMOVE LAST SEPARATOR */
@@ -41,18 +30,11 @@
 
 /* LINKS */
 .nav-links a {
-    color: rgb(242, 247, 245);
+    color: black;
     text-decoration: none;
-    font-weight: bold;
 }
 
-/* HOVER EFFECT (same as HTML) */
+/* HOVER */
 .nav-links a:hover {
-    color: rgb(9, 96, 9);
-    text-decoration: underline;
-}
-
-/* ACTIVE LINK */
-.nav-links a.active {
     text-decoration: underline;
 }

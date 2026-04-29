@@ -18,8 +18,8 @@ export default function Navbar() {
           <li><Link to="/about">About</Link></li>
           <li><Link to="/contact">Contact</Link></li>
           <li><Link to="/website-evaluation">Website Evaluations</Link></li>
-          {/* CLIENT PROJECT */}
-        <li><Link to="/client-project">Client Project</Link></li>
+        <li><Link to="/slideshow">Slideshow</Link></li>
+          <Link to="/hobby">Hobby Project</Link>
 
         </ul>
       </nav>
