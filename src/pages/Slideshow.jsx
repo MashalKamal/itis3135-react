@@ -1,22 +1,21 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./Slideshow.css";
 
 export default function Slideshow() {
-  // Images from /public/images folder
-  const images = [
-    { url: "/images/pic1.jpg", title: "Afghan Cooking 1" },
-    { url: "/images/rice.jpg", title: "Kabuli Pulao" },
-    { url: "/images/pic2.jpg", title: "Afghan Food" },
-    { url: "/images/pic3.jpg", title: "Traditional Dish" },
-    { url: "/images/pic4.jpg", title: "Kabab" },
-    { url: "/images/pic7.jpg", title: "Afghan Meal" },
-    { url: "/images/pic12.jpg", title: "Grilled Kabab" },
-    { url: "/images/pic15.jpg", title: "Dessert" },
-    { url: "/images/pic16.jpg", title: "Sweet Dish" }
-  ];
-
+  const [images, setImages] = useState([]);
   const [index, setIndex] = useState(0);
   const timerRef = useRef(null);
+
+  // ✅ FETCH CAT API IMAGES
+  useEffect(() => {
+    fetch("https://api.thecatapi.com/v1/images/search?limit=10")
+      .then((res) => res.json())
+      .then((data) => {
+        setImages(data);
+        setIndex(0);
+      })
+      .catch((err) => console.error(err));
+  }, []);
 
   // NEXT
   const next = () => {
@@ -34,7 +33,7 @@ export default function Slideshow() {
   // LAST
   const last = () => setIndex(images.length - 1);
 
-  // PLAY (auto every 5 seconds)
+  // PLAY
   const play = () => {
     if (timerRef.current) return;
 
@@ -49,24 +48,22 @@ export default function Slideshow() {
     timerRef.current = null;
   };
 
-  // AUTO START WHEN PAGE LOADS
-  useEffect(() => {
-    play();
-
-    return () => stop(); // cleanup when leaving page
-  }, []);
+  // loading check
+  if (images.length === 0) return <p>Loading slideshow...</p>;
 
   return (
     <div className="slideshow">
-      <h2>Afghan Food Slideshow</h2>
+      <h2>Slideshow (API Project)</h2>
 
+      {/* ✅ IMPORTANT: cat API uses "url" */}
       <img
         src={images[index].url}
-        alt={images[index].title}
+        alt="cat"
         className="slide-image"
       />
 
-      <p>{images[index].title}</p>
+      {/* ❌ DO NOT use title/name */}
+      <p>Image {index + 1} of {images.length}</p>
 
       <div className="buttons">
         <button onClick={first}>First</button>

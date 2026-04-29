@@ -3,26 +3,14 @@
   padding: 20px;
 }
 
-.slideshow h2 {
-  margin-bottom: 15px;
-  color: rgb(179, 106, 54);
-}
-
 .slide-image {
   width: 400px;
   height: 300px;
   object-fit: cover;
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  margin-bottom: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
-.slideshow p {
-  font-weight: bold;
-  margin-bottom: 15px;
-}
-
-/* BUTTONS */
 .buttons {
   margin-top: 15px;
 }
@@ -35,7 +23,6 @@
   border: none;
   cursor: pointer;
   border-radius: 5px;
-  font-weight: bold;
 }
 
 .buttons button:hover {
